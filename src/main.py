@@ -33,11 +33,15 @@ class ParserInfo(BaseModel):
 
 class Parser(StrEnum):
     DOCLING = auto()
+    EASYOCR = auto()
     LLAMA_PARSE_FAST = auto()
     LLAMA_PARSE = auto()
     LLMSHERPA = auto()
     MARKER = auto()
+    MARKITDOWN = auto()
     NOUGAT = auto()
+    OCR_MAC = auto()
+    OPENAI_VISION = auto()
     PDFMINER = auto()
     PDFPLUMBER = auto()
     PDFPLUMBER_LAYOUT = auto()
@@ -47,11 +51,12 @@ class Parser(StrEnum):
     PYMUPDF = auto()
     PYPDF = auto()
     PYPDFIUM2 = auto()
+    QWEN_VISION = auto()
+    RAPIDOCR = auto()
     UNSTRUCTURED_FAST = auto()
     UNSTRUCTURED_HIRES = auto()
     GOT_OCR2_0 = auto()
     GOT_OCR2_0_FORMAT = auto()
-    MARKITDOWN = auto()
     GEMINI_2_0_FLASH = auto()
 
 
@@ -94,6 +99,10 @@ def get_parser(parser: Parser) -> BasePdfParser:
         from src.parsers.docling import DoclingPdfParser
 
         return DoclingPdfParser()
+    if parser == Parser.EASYOCR:
+        from src.parsers.easyocr_parser import EasyOcrPdfParser
+
+        return EasyOcrPdfParser()
     if parser == Parser.GEMINI_2_0_FLASH:
         from parsers.gemini_2_0_flash import Gemini2FlashParser
 
@@ -131,6 +140,14 @@ def get_parser(parser: Parser) -> BasePdfParser:
         from src.parsers.nougat import NougatPdfParser
 
         return NougatPdfParser()
+    if parser == Parser.OCR_MAC:
+        from src.parsers.ocr_mac import OcrMacPdfParser
+
+        return OcrMacPdfParser()
+    if parser == Parser.OPENAI_VISION:
+        from src.parsers.openai_vision import OpenAIVisionPdfParser
+
+        return OpenAIVisionPdfParser()
     if parser == Parser.PDFMINER:
         from src.parsers.pdfminer import PdfMinerPdfParser
 
@@ -167,6 +184,14 @@ def get_parser(parser: Parser) -> BasePdfParser:
         from parsers.pypdfium2 import Pypdfium2PdfParser
 
         return Pypdfium2PdfParser()
+    if parser == Parser.QWEN_VISION:
+        from src.parsers.qwen_vision import QwenVisionPdfParser
+
+        return QwenVisionPdfParser()
+    if parser == Parser.RAPIDOCR:
+        from src.parsers.rapidocr import RapidOcrPdfParser
+
+        return RapidOcrPdfParser()
     if parser == Parser.UNSTRUCTURED_FAST:
         from parsers.unstructured import UnstructuredPdfParser
 
