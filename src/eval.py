@@ -9,7 +9,7 @@ from pydantic import BaseModel
 from dotenv import load_dotenv
 from tqdm import tqdm
 import typer
-from openai import OpenAI
+from google import genai
 
 from src.utils import write_to_file
 from src.parsers.base import BasePdfParser
@@ -18,17 +18,17 @@ load_dotenv()
 
 REPO_ROOT = Path(__name__).parent.parent
 DOC_DIR = REPO_ROOT / "docs"
-OUT_DIR = REPO_ROOT / "out"
+OUT_DIR = REPO_ROOT / "results"
 
 if not OUT_DIR.exists():
     OUT_DIR.mkdir()
 
-# Initialize OpenAI client for evaluation
-API_KEY = os.getenv("OPENAI_API_KEY")
+# Initialize Gemini client for evaluation
+API_KEY = os.getenv("GOOGLE_API_KEY")
 if API_KEY is None:
-    raise ValueError("OPENAI_API_KEY is not set for evaluation")
+    raise ValueError("GOOGLE_API_KEY is not set for evaluation")
 
-openai_client = OpenAI(api_key=API_KEY)
+genai_client = genai.Client()
 
 
 class LoadedFileInfo(BaseModel):
@@ -247,11 +247,11 @@ def evaluate_parser(parser_: Parser, parser_info: ParserInfo) -> EvaluatedParser
     parser_out_dir = OUT_DIR / parser_.value
     evaluated_parser_info = EvaluatedParserInfo(name=parser_.value, files_loaded=[])
     
-    # Get all output files from the parser
-    output_files = list(parser_out_dir.glob("*"))
+    # Get all .md output files from the parser
+    output_files = list(parser_out_dir.glob("*.md"))
     
     if not output_files:
-        print(f"No output files found in {parser_out_dir}")
+        print(f"No .md output files found in {parser_out_dir}")
         return evaluated_parser_info
     
     for output_file in tqdm(output_files, desc=f"Evaluating {parser_.value} outputs"):
@@ -325,13 +325,13 @@ def evaluate_parser(parser_: Parser, parser_info: ParserInfo) -> EvaluatedParser
             """
 
             try:
-                response = openai_client.chat.completions.create(
-                    model="gpt-3.5-turbo",
-                    messages=[{"role": "user", "content": evaluation_prompt}]
+                response = genai_client.models.generate_content(
+                    model="gemini-1.5-flash",
+                    contents=evaluation_prompt
                 )
-                
+
                 # Parse the JSON response
-                response_text = response.choices[0].message.content.strip()
+                response_text = response.text.strip()
                 # Extract JSON from the response (in case it's wrapped in markdown)
                 if "```json" in response_text:
                     json_start = response_text.find("```json") + 7
@@ -399,11 +399,8 @@ def evaluate_parser(parser_: Parser, parser_info: ParserInfo) -> EvaluatedParser
             evaluated_parser_info.avg_load_time_per_page = sum(load_times) / len(load_times)
     
     # Save evaluation results
-    evaluation_out_dir = OUT_DIR / f"{parser_.value}_evaluation"
-    evaluation_out_dir.mkdir(exist_ok=True)
-    
     write_to_file(
-        evaluation_out_dir / "evaluation_results.json", 
+        OUT_DIR / f"{parser_.value}_evaluation_results.json", 
         evaluated_parser_info.model_dump_json(indent=4)
     )
     
@@ -424,7 +421,7 @@ def evaluate_parser(parser_: Parser, parser_info: ParserInfo) -> EvaluatedParser
 
 def main(
     parsers: list[Parser] = None,
-    max_docs: int = None,
+    max_docs: int = 3,
     skip_evaluation: bool = False,
     skip_parsing: bool = False
 ):

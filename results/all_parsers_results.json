@@ -1,0 +1,1113 @@
+{
+    "summary": {
+        "total_parsers": 20,
+        "parsers_processed": [
+            "docling",
+            "llmsherpa",
+            "marker",
+            "nougat",
+            "pdfminer",
+            "pdfplumber",
+            "pdfplumber_layout",
+            "pdftext",
+            "pdftext_json",
+            "pymupdf4llm",
+            "pymupdf",
+            "pypdf",
+            "pypdfium2",
+            "unstructured_fast",
+            "unstructured_hires",
+            "markitdown",
+            "gemini_2_0_flash",
+            "easyocr",
+            "ocr_mac",
+            "openai_vision"
+        ]
+    },
+    "results": {
+        "docling": {
+            "parser_info": {
+                "name": "docling",
+                "files_loaded": [
+                    {
+                        "name": "protocol.pdf",
+                        "n_pages": 6,
+                        "load_time": 8.211956977844238,
+                        "load_time_per_page": 1.368659496307373
+                    },
+                    {
+                        "name": "cv_saljare.pdf",
+                        "n_pages": 1,
+                        "load_time": 0.4874601364135742,
+                        "load_time_per_page": 0.4874601364135742
+                    },
+                    {
+                        "name": "308-an-ai-strategy-for-sweden-pdf-version-1020240408.pdf",
+                        "n_pages": 18,
+                        "load_time": 8.070560932159424,
+                        "load_time_per_page": 0.4483644962310791
+                    }
+                ],
+                "avg_load_time_per_page": 0.7681613763173422
+            },
+            "evaluated_info": {
+                "name": "docling",
+                "files_loaded": [
+                    {
+                        "name": "cv_saljare.md",
+                        "n_pages": 1,
+                        "load_time": 0.4874601364135742,
+                        "load_time_per_page": 0.4874601364135742,
+                        "evaluation": {
+                            "formatting_score": 6.0,
+                            "structure_preservation": 7.0,
+                            "content_accuracy": 9.0,
+                            "readability": 8.0,
+                            "overall_score": 7.5,
+                            "feedback": "The parser does a reasonable job of extracting the content and preserving the structure of the CV.  The use of `##` for headings is a good indication of heading levels, though it lacks the visual formatting of the original PDF.  The content accuracy is high, with most of the text and special characters correctly rendered.  The ratings at the end (3/5, 4/5, 5/5) are not correctly formatted, they appear as plain text.  The spacing and alignment aren't perfectly preserved, leading to a slightly less visually appealing output compared to the original.  Readability is good, with a clear flow of information, although some minor improvements in formatting (like better handling of lists) could be made.  Overall, the output is usable and provides a good representation of the original CV's information, but could benefit from improved formatting consistency and handling of visual elements."
+                        }
+                    },
+                    {
+                        "name": "308-an-ai-strategy-for-sweden-pdf-version-1020240408.md",
+                        "n_pages": 18,
+                        "load_time": 8.070560932159424,
+                        "load_time_per_page": 0.4483644962310791,
+                        "evaluation": {
+                            "formatting_score": 4.0,
+                            "structure_preservation": 6.0,
+                            "content_accuracy": 8.0,
+                            "readability": 7.0,
+                            "overall_score": 6.0,
+                            "feedback": "The parser does a reasonable job of extracting the text content from the PDF, achieving a good level of content accuracy.  Readability is also relatively high, with a mostly coherent text flow. However, the formatting score is significantly lower due to the complete loss of original formatting such as headings, paragraph breaks and lack of proper section separation beyond a single '## Executive Summary'.  The parser's handling of images is also poor, simply replacing them with '<!-- image -->' placeholders.  While the structure is mostly preserved in terms of the general flow of ideas,  the lack of clear visual structure significantly impacts its usability.  The truncation of the last sentence due to character limits shows a lack of robustness.  Overall, the parser demonstrates decent text extraction capabilities but falls short in preserving the document's visual and structural integrity.  The output is functional but far from a faithful representation of the original PDF."
+                        }
+                    },
+                    {
+                        "name": "protocol.md",
+                        "n_pages": 6,
+                        "load_time": 8.211956977844238,
+                        "load_time_per_page": 1.368659496307373,
+                        "evaluation": {
+                            "formatting_score": 6.0,
+                            "structure_preservation": 7.0,
+                            "content_accuracy": 8.0,
+                            "readability": 8.0,
+                            "overall_score": 7.2,
+                            "feedback": "The parser does a decent job of extracting the textual content and maintaining the overall structure of the protocol.  The headings and sections are mostly preserved, and the content is largely accurate. Readability is good, with a logical flow of information. However, the formatting suffers.  The table in the Inhaltsverzeichnis (table of contents) is not properly rendered, and the repeated 'Justerare' lines at the end of sections are an artifact of the parsing process.  The images are represented only as '<!-- image -->', indicating a failure to extract or render the image content.  While the content accuracy is high, the lack of image data and the formatting imperfections lower the overall score.  The parser successfully captures most of the key information, making it usable, but a more sophisticated parser would improve the formatting significantly and include the images."
+                        }
+                    }
+                ],
+                "avg_load_time_per_page": 0.7681613763173422,
+                "avg_formatting_score": 5.333333333333333,
+                "avg_structure_preservation": 6.666666666666667,
+                "avg_content_accuracy": 8.333333333333334,
+                "avg_readability": 7.666666666666667,
+                "avg_overall_score": 6.8999999999999995
+            }
+        },
+        "llmsherpa": {
+            "parser_info": {
+                "name": "llmsherpa",
+                "files_loaded": [],
+                "avg_load_time_per_page": null
+            },
+            "evaluated_info": {
+                "name": "llmsherpa",
+                "files_loaded": [],
+                "avg_load_time_per_page": null,
+                "avg_formatting_score": null,
+                "avg_structure_preservation": null,
+                "avg_content_accuracy": null,
+                "avg_readability": null,
+                "avg_overall_score": null
+            }
+        },
+        "marker": {
+            "parser_info": {
+                "name": "marker",
+                "files_loaded": [
+                    {
+                        "name": "protocol.pdf",
+                        "n_pages": 6,
+                        "load_time": 4.001734733581543,
+                        "load_time_per_page": 0.6669557889302572
+                    },
+                    {
+                        "name": "cv_saljare.pdf",
+                        "n_pages": 1,
+                        "load_time": 2.1290011405944824,
+                        "load_time_per_page": 2.1290011405944824
+                    },
+                    {
+                        "name": "308-an-ai-strategy-for-sweden-pdf-version-1020240408.pdf",
+                        "n_pages": 18,
+                        "load_time": 6.7683680057525635,
+                        "load_time_per_page": 0.3760204447640313
+                    }
+                ],
+                "avg_load_time_per_page": 1.0573257914295904
+            },
+            "evaluated_info": {
+                "name": "marker",
+                "files_loaded": [
+                    {
+                        "name": "cv_saljare.md",
+                        "n_pages": 1,
+                        "load_time": 2.1290011405944824,
+                        "load_time_per_page": 2.1290011405944824,
+                        "evaluation": {
+                            "formatting_score": 6.0,
+                            "structure_preservation": 7.0,
+                            "content_accuracy": 9.0,
+                            "readability": 8.0,
+                            "overall_score": 7.5,
+                            "feedback": "The parser does a decent job of extracting the content and preserving the overall structure of the CV.  The content accuracy is high, with most information correctly captured. Readability is good, although some formatting inconsistencies exist. \n\nHowever, the formatting score is lower due to several issues. The parser struggles with consistent heading levels (e.g., excessive use of ##) and doesn't perfectly replicate the original's visual hierarchy and alignment.  The use of markdown is appropriate, but implementation could be improved for visual fidelity to the original. There's also an image (`![](_page_0_Picture_0.jpeg)`)  that is included but not well-integrated, needing more context. The bullet points under 'Kompetenser' are not well formatted.  While the structure is largely preserved,  a more refined approach would improve the presentation. The parser also shows some limitations in handling multi-column layouts or complex tables, which might be present in the original PDF but aren't represented in the output. Finally, the truncation of the output due to character limits is a significant flaw that artificially decreases the scores, as important information might be missing."
+                        }
+                    },
+                    {
+                        "name": "308-an-ai-strategy-for-sweden-pdf-version-1020240408.md",
+                        "n_pages": 18,
+                        "load_time": 6.7683680057525635,
+                        "load_time_per_page": 0.3760204447640313,
+                        "evaluation": {
+                            "formatting_score": 4.0,
+                            "structure_preservation": 5.0,
+                            "content_accuracy": 8.0,
+                            "readability": 7.0,
+                            "overall_score": 6.0,
+                            "feedback": "The parser does a reasonable job of extracting the text content from the PDF, achieving a good level of content accuracy.  However, it significantly fails to preserve formatting.  Headers and sub-headers are not clearly demarcated, and the text blocks are somewhat jumbled together, lacking the visual structure of the original PDF.  The inclusion of images as `![](_page_0_Picture_*.jpeg)` is unhelpful; a better parser would either include the images or describe their content textually.  The parser struggles with the layout, losing some of the original document's visual organization.  While most of the text is accurately transcribed, the loss of formatting makes it less readable than the original.  The Swedish text is also included without being translated, though this may not be an error of the parser itself.  In summary, the content is mostly correct, but the presentation is poor, impacting readability and overall usability.  Improving the handling of formatting, images, and layout would significantly boost the quality."
+                        }
+                    },
+                    {
+                        "name": "protocol.md",
+                        "n_pages": 6,
+                        "load_time": 4.001734733581543,
+                        "load_time_per_page": 0.6669557889302572,
+                        "evaluation": {
+                            "formatting_score": 7.0,
+                            "structure_preservation": 8.0,
+                            "content_accuracy": 9.0,
+                            "readability": 9.0,
+                            "overall_score": 8.2,
+                            "feedback": "The parser does a commendable job of extracting the text and preserving the overall structure of the PDF.  The hierarchical structure (headings, subheadings) is largely maintained, and the content is accurately represented. Readability is high; the text flows well. \n\nHowever, the formatting score is slightly lower due to the imperfect rendering of the table in the Inhaltsverzeichnis (table of contents). While the information is present, the visual representation is not identical to the original. The images are represented as placeholders which is also a minor formatting issue.  The parser also cuts off the text prematurely due to the 5000 character limit, which impacts the overall score, but doesn't affect the quality of the parsing itself, until that point.\n\nThe structure is well-preserved, with sections and subsections mostly in their correct order. Page breaks are not explicitly represented, but the logical flow of the document is maintained.  \n\nContent accuracy is high; the vast majority of the text is correctly extracted and presented.  \n\nReadability is excellent, with clear and coherent text flow.  There are no instances of garbled or nonsensical text. \n\nOverall, the parser demonstrates strong performance in capturing the essential elements of the PDF, demonstrating a good balance of accuracy, structure preservation, and readability."
+                        }
+                    }
+                ],
+                "avg_load_time_per_page": 1.0573257914295904,
+                "avg_formatting_score": 5.666666666666667,
+                "avg_structure_preservation": 6.666666666666667,
+                "avg_content_accuracy": 8.666666666666666,
+                "avg_readability": 8.0,
+                "avg_overall_score": 7.233333333333333
+            }
+        },
+        "nougat": {
+            "parser_info": {
+                "name": "nougat",
+                "files_loaded": [],
+                "avg_load_time_per_page": null
+            },
+            "evaluated_info": {
+                "name": "nougat",
+                "files_loaded": [],
+                "avg_load_time_per_page": null,
+                "avg_formatting_score": null,
+                "avg_structure_preservation": null,
+                "avg_content_accuracy": null,
+                "avg_readability": null,
+                "avg_overall_score": null
+            }
+        },
+        "pdfminer": {
+            "parser_info": {
+                "name": "pdfminer",
+                "files_loaded": [
+                    {
+                        "name": "protocol.pdf",
+                        "n_pages": 6,
+                        "load_time": 0.056884050369262695,
+                        "load_time_per_page": 0.009480675061543783
+                    },
+                    {
+                        "name": "cv_saljare.pdf",
+                        "n_pages": 1,
+                        "load_time": 0.015904903411865234,
+                        "load_time_per_page": 0.015904903411865234
+                    },
+                    {
+                        "name": "308-an-ai-strategy-for-sweden-pdf-version-1020240408.pdf",
+                        "n_pages": 18,
+                        "load_time": 2.1339471340179443,
+                        "load_time_per_page": 0.11855261855655247
+                    }
+                ],
+                "avg_load_time_per_page": 0.04797939900998716
+            },
+            "evaluated_info": {
+                "name": "pdfminer",
+                "files_loaded": [
+                    {
+                        "name": "cv_saljare.md",
+                        "n_pages": 1,
+                        "load_time": 0.015904903411865234,
+                        "load_time_per_page": 0.015904903411865234,
+                        "evaluation": {
+                            "formatting_score": 7.0,
+                            "structure_preservation": 8.0,
+                            "content_accuracy": 9.5,
+                            "readability": 9.0,
+                            "overall_score": 8.5,
+                            "feedback": "The parser does a commendable job extracting the content and preserving the overall structure of the CV.  The headings and subheadings are mostly correctly identified and organized, and the content is accurate.  The readability is excellent, with clear text flow and proper sentence structure.  However, some minor formatting issues exist. While the parser captures the hierarchical structure, the precise alignment and spacing from the original PDF aren't perfectly replicated.  For instance, the bullet points under 'N\u00e5gra relevanta kurser' are not visually as well-formatted as in the original. Also, the rating system (3/5, 4/5, 5/5) appears as a list, not visually representing its original layout. These minor formatting discrepancies result in a slightly lower formatting score.  The structure preservation is good, though a more sophisticated parser might handle the date ranges (2016 \u2013 nuvarande, 2013 - 2016) in a more visually appealing way, perhaps within a separate table or using a clearer visual distinction from the paragraph text. The content accuracy is very high, with only negligible differences from the original.  Overall, the parser delivers a largely usable and readable output, making it suitable for most purposes.  A few refinements in formatting would elevate the score further."
+                        }
+                    },
+                    {
+                        "name": "308-an-ai-strategy-for-sweden-pdf-version-1020240408.md",
+                        "n_pages": 18,
+                        "load_time": 2.1339471340179443,
+                        "load_time_per_page": 0.11855261855655247,
+                        "evaluation": {
+                            "formatting_score": 6.0,
+                            "structure_preservation": 7.0,
+                            "content_accuracy": 8.5,
+                            "readability": 9.0,
+                            "overall_score": 7.5,
+                            "feedback": "The parser does a reasonable job extracting the text content and maintaining the general structure of the document.  The readability is high, with the extracted text forming coherent paragraphs. Content accuracy is also good, with minimal loss of information. However, the formatting suffers.  The parser struggles with the header formatting (e.g., \"## M A R T I N   S V E N S S O N\") and completely loses any visual presentation beyond simple text.  While the logical flow is preserved, the lack of formatting elements like headings and section breaks makes navigating the text less intuitive than the original PDF.  The repetition of the Swedish text segment also indicates a potential issue in handling duplicated content. The overall score reflects a balance between good content extraction and weaker formatting and structural preservation.  Improvements could be made by better handling of header styles and visual elements to better mirror the original PDF structure.  Addressing the duplicated text segment is also critical."
+                        }
+                    },
+                    {
+                        "name": "protocol.md",
+                        "n_pages": 6,
+                        "load_time": 0.056884050369262695,
+                        "load_time_per_page": 0.009480675061543783,
+                        "evaluation": {
+                            "formatting_score": 3.0,
+                            "structure_preservation": 6.0,
+                            "content_accuracy": 9.0,
+                            "readability": 7.0,
+                            "overall_score": 6.0,
+                            "feedback": "The parser does a reasonable job of extracting the textual content from the PDF, demonstrating good content accuracy.  However, it completely fails to preserve the formatting.  Headers, page breaks, and any sort of visual structure are lost, resulting in a long, continuous string of text.  While the content is mostly there and readable, the lack of formatting significantly impairs usability and readability. The structure of sections and the numbered paragraphs are partially preserved, giving it a slightly better structure preservation score than formatting. The readability suffers due to the absence of formatting cues, making it harder to parse the information quickly and efficiently, although the language itself is understandable. Overall, the parser needs significant improvement in handling formatting and layout to produce a usable output."
+                        }
+                    }
+                ],
+                "avg_load_time_per_page": 0.04797939900998716,
+                "avg_formatting_score": 5.333333333333333,
+                "avg_structure_preservation": 7.0,
+                "avg_content_accuracy": 9.0,
+                "avg_readability": 8.333333333333334,
+                "avg_overall_score": 7.333333333333333
+            }
+        },
+        "pdfplumber": {
+            "parser_info": {
+                "name": "pdfplumber",
+                "files_loaded": [
+                    {
+                        "name": "protocol.pdf",
+                        "n_pages": 6,
+                        "load_time": 0.25882816314697266,
+                        "load_time_per_page": 0.04313802719116211
+                    },
+                    {
+                        "name": "cv_saljare.pdf",
+                        "n_pages": 1,
+                        "load_time": 0.02216339111328125,
+                        "load_time_per_page": 0.02216339111328125
+                    },
+                    {
+                        "name": "308-an-ai-strategy-for-sweden-pdf-version-1020240408.pdf",
+                        "n_pages": 18,
+                        "load_time": 2.561263084411621,
+                        "load_time_per_page": 0.14229239357842338
+                    }
+                ],
+                "avg_load_time_per_page": 0.06919793729428891
+            },
+            "evaluated_info": {
+                "name": "pdfplumber",
+                "files_loaded": [
+                    {
+                        "name": "cv_saljare.md",
+                        "n_pages": 1,
+                        "load_time": 0.02216339111328125,
+                        "load_time_per_page": 0.02216339111328125,
+                        "evaluation": {
+                            "formatting_score": 4.0,
+                            "structure_preservation": 6.0,
+                            "content_accuracy": 8.0,
+                            "readability": 7.0,
+                            "overall_score": 6.0,
+                            "feedback": "The parser does a reasonable job of extracting the content from the CV, but it struggles with formatting.  The header levels (#, ##, ###) are inconsistently applied and don't perfectly reflect the visual hierarchy in the original PDF.  Spacing and alignment are not well preserved, leading to a somewhat messy output.  While most of the content is accurately captured, the formatting inconsistencies make it less readable than the original.  The parser also misses some subtleties in formatting like potential bolding or italics. The structure is mostly preserved in terms of sections (Profil, Erfarenheter, Utbildning, etc.), but the visual presentation is significantly degraded. The character encoding is handled correctly, and the content is largely accurate and complete, with the exception of the formatting issues. Readability is impacted by the formatting but the core information remains intact and understandable.  Overall, the parser needs improvement in handling formatting and visual elements, but the core content extraction is fairly good."
+                        }
+                    },
+                    {
+                        "name": "308-an-ai-strategy-for-sweden-pdf-version-1020240408.md",
+                        "n_pages": 18,
+                        "load_time": 2.561263084411621,
+                        "load_time_per_page": 0.14229239357842338,
+                        "evaluation": {
+                            "formatting_score": 4.0,
+                            "structure_preservation": 6.0,
+                            "content_accuracy": 7.0,
+                            "readability": 8.0,
+                            "overall_score": 6.0,
+                            "feedback": "The parser does a reasonable job of extracting the text content from the PDF, and the readability of the output is good.  However, it significantly fails to preserve the formatting.  Headers and the overall structure are somewhat maintained, earning a decent structure preservation score, but the lack of formatting elements like bold text, numbered lists, and section breaks makes it less visually appealing and harder to navigate than the original. The presence of a clearly non-English section suggests some issues with character encoding or handling of special characters, slightly impacting content accuracy.  While most of the content is present, the truncation at 5000 characters is a significant flaw and represents a major limitation of the parser.  Overall, the parser provides a functional text representation, but improvements in formatting and handling of character sets are needed to produce a higher quality output."
+                        }
+                    },
+                    {
+                        "name": "protocol.md",
+                        "n_pages": 6,
+                        "load_time": 0.25882816314697266,
+                        "load_time_per_page": 0.04313802719116211,
+                        "evaluation": {
+                            "formatting_score": 4.0,
+                            "structure_preservation": 6.0,
+                            "content_accuracy": 9.0,
+                            "readability": 7.0,
+                            "overall_score": 6.5,
+                            "feedback": "The parser does a reasonable job at extracting the content of the PDF, demonstrating good content accuracy.  However, it struggles significantly with formatting.  The page numbers and repetitive 'Justerare' lines are a clear indication of a failure to understand the layout and hierarchical structure.  While the text is mostly readable, the lack of proper formatting (particularly the missing section breaks and inconsistent spacing) detracts from the readability. The structure preservation score is somewhat higher because the logical flow of sections and the main content is largely retained, even though the visual presentation of this structure is poor. The parser successfully handles special characters and dates. Overall, the output is usable but could be substantially improved with better layout and formatting handling."
+                        }
+                    }
+                ],
+                "avg_load_time_per_page": 0.06919793729428891,
+                "avg_formatting_score": 4.0,
+                "avg_structure_preservation": 6.0,
+                "avg_content_accuracy": 8.0,
+                "avg_readability": 7.333333333333333,
+                "avg_overall_score": 6.166666666666667
+            }
+        },
+        "pdfplumber_layout": {
+            "parser_info": {
+                "name": "pdfplumber_layout",
+                "files_loaded": [
+                    {
+                        "name": "protocol.pdf",
+                        "n_pages": 6,
+                        "load_time": 0.11096596717834473,
+                        "load_time_per_page": 0.018494327863057453
+                    },
+                    {
+                        "name": "cv_saljare.pdf",
+                        "n_pages": 1,
+                        "load_time": 0.022246122360229492,
+                        "load_time_per_page": 0.022246122360229492
+                    },
+                    {
+                        "name": "308-an-ai-strategy-for-sweden-pdf-version-1020240408.pdf",
+                        "n_pages": 18,
+                        "load_time": 2.405832052230835,
+                        "load_time_per_page": 0.1336573362350464
+                    }
+                ],
+                "avg_load_time_per_page": 0.058132595486111105
+            },
+            "evaluated_info": {
+                "name": "pdfplumber_layout",
+                "files_loaded": [
+                    {
+                        "name": "cv_saljare.md",
+                        "n_pages": 1,
+                        "load_time": 0.022246122360229492,
+                        "load_time_per_page": 0.022246122360229492,
+                        "evaluation": {
+                            "formatting_score": 6.0,
+                            "structure_preservation": 7.0,
+                            "content_accuracy": 9.0,
+                            "readability": 8.0,
+                            "overall_score": 7.5,
+                            "feedback": "The parser does a decent job extracting the content and preserving the overall structure of the CV.  The use of headings (##, ###) is a good indicator of structural understanding. Content accuracy is high, with most of the text correctly transcribed.  Readability is good, with a clear flow of information. \n\nHowever, the formatting score is lowered due to the loss of precise formatting.  While the hierarchy is mostly maintained, the spacing and alignment aren't perfectly replicated, making it slightly less visually appealing than the original.  For example, the inconsistent spacing around the contact information section detracts from the formatting. Also,  bolding and other font styles aren't preserved. The parser struggles to handle the multi-column layout elements, leading to some minor structural compromises.\n\nThe structure preservation score is affected by the aforementioned issues with the multi-column layout. While the logical flow remains intact, the visual layout of some sections is compromised.\n\nIn summary, the parser provides a usable output, but improvements in handling formatting details (especially spacing, alignment, and font styles) and multi-column layouts would significantly improve the overall quality."
+                        }
+                    },
+                    {
+                        "name": "308-an-ai-strategy-for-sweden-pdf-version-1020240408.md",
+                        "n_pages": 18,
+                        "load_time": 2.405832052230835,
+                        "load_time_per_page": 0.1336573362350464,
+                        "evaluation": {
+                            "formatting_score": 3.0,
+                            "structure_preservation": 4.0,
+                            "content_accuracy": 7.0,
+                            "readability": 6.0,
+                            "overall_score": 5.0,
+                            "feedback": "The parser output shows significant issues with formatting.  Text alignment and spacing are wildly inconsistent, with large gaps between words and inconsistent line breaks. Headers and subheaders are not clearly differentiated, making the text hierarchy difficult to follow.  The parser failed to preserve bold formatting consistently. The layout structure is poorly maintained. While most of the content is present (a score of 7 out of 10 given the truncation), the lack of formatting significantly hinders readability. The Swedish text shows apparent character encoding issues (\u00e4, \u00e5 etc. are present). While the overall structure is mostly preserved in terms of section order, the lack of formatting and the uneven spacing makes it harder to follow the flow of information.  The readability is impacted by the poor formatting and sporadic character encoding problems. The overall score reflects the substantial problems with formatting and layout, which negatively impact the usability of the parsed output, despite reasonably good content capture."
+                        }
+                    },
+                    {
+                        "name": "protocol.md",
+                        "n_pages": 6,
+                        "load_time": 0.11096596717834473,
+                        "load_time_per_page": 0.018494327863057453,
+                        "evaluation": {
+                            "formatting_score": 4.0,
+                            "structure_preservation": 6.0,
+                            "content_accuracy": 8.0,
+                            "readability": 7.0,
+                            "overall_score": 6.0,
+                            "feedback": "The parser does a reasonable job of extracting the content from the PDF, achieving a good level of content accuracy.  However, it significantly struggles with formatting.  Headers and sub-headers are present, but the consistent use of '###' is jarring and doesn't reflect the original formatting.  Page breaks and page numbers are represented, but the overall layout is disrupted.  Text alignment and spacing are not well-preserved.  The parser preserves the bullet points in section \u00a71, but otherwise fails to preserve other list structures. While the content is mostly accurate and readable, the poor formatting significantly impacts the usability and overall quality of the output. The structure is largely preserved, section divisions are present, and the logical flow is maintained, although the page breaks are artificial and disrupt the original flow. The readability is impacted by the formatting issues but is still acceptable.  Overall, the parser needs significant improvement in handling formatting to produce a high-quality output. The abrupt truncation at 5000 characters also affects the overall score, as significant portions of the document are missing."
+                        }
+                    }
+                ],
+                "avg_load_time_per_page": 0.05813259548611111,
+                "avg_formatting_score": 4.333333333333333,
+                "avg_structure_preservation": 5.666666666666667,
+                "avg_content_accuracy": 8.0,
+                "avg_readability": 7.0,
+                "avg_overall_score": 6.166666666666667
+            }
+        },
+        "pdftext": {
+            "parser_info": {
+                "name": "pdftext",
+                "files_loaded": [
+                    {
+                        "name": "protocol.pdf",
+                        "n_pages": 6,
+                        "load_time": 0.2718970775604248,
+                        "load_time_per_page": 0.045316179593404136
+                    },
+                    {
+                        "name": "cv_saljare.pdf",
+                        "n_pages": 1,
+                        "load_time": 0.00994110107421875,
+                        "load_time_per_page": 0.00994110107421875
+                    },
+                    {
+                        "name": "308-an-ai-strategy-for-sweden-pdf-version-1020240408.pdf",
+                        "n_pages": 18,
+                        "load_time": 0.3661191463470459,
+                        "load_time_per_page": 0.02033995257483588
+                    }
+                ],
+                "avg_load_time_per_page": 0.025199077747486254
+            },
+            "evaluated_info": {
+                "name": "pdftext",
+                "files_loaded": [
+                    {
+                        "name": "cv_saljare.md",
+                        "n_pages": 1,
+                        "load_time": 0.00994110107421875,
+                        "load_time_per_page": 0.00994110107421875,
+                        "evaluation": {
+                            "formatting_score": 7.0,
+                            "structure_preservation": 8.0,
+                            "content_accuracy": 9.0,
+                            "readability": 9.0,
+                            "overall_score": 8.2,
+                            "feedback": "The parser output demonstrates a good understanding of the PDF's structure and content.  The headings and subheadings are mostly correctly identified and organized, reflecting the original document's hierarchy.  The use of bullet points for the course list is also a positive.  Content accuracy is high, with only minor formatting inconsistencies.  The readability is excellent; the text flows naturally and is easy to understand. However, some formatting aspects could be improved.  While the major structural elements are preserved, the exact spacing and alignment of the original PDF are not perfectly replicated. For example, the 'Profil' section's alignment might be slightly off compared to the original.  The lack of font emphasis (bold, italic) is noticeable in several places, and this could be enhanced to improve the visual fidelity of the output. Overall, the parser performs admirably, offering a good balance between structural accuracy and readability. A small amount of refinement of formatting would raise the score considerably."
+                        }
+                    },
+                    {
+                        "name": "308-an-ai-strategy-for-sweden-pdf-version-1020240408.md",
+                        "n_pages": 18,
+                        "load_time": 0.3661191463470459,
+                        "load_time_per_page": 0.02033995257483588,
+                        "evaluation": {
+                            "formatting_score": 6.0,
+                            "structure_preservation": 7.0,
+                            "content_accuracy": 9.0,
+                            "readability": 8.0,
+                            "overall_score": 7.5,
+                            "feedback": "The parser does a reasonable job of extracting the text content from the PDF.  Content accuracy is high, with minimal loss of information. Readability is also good, with the text flowing naturally. However, the formatting score is lower because the parser struggles to maintain the original formatting, especially the consistent use of headings and subheadings and other visual elements in the original PDF.  Some important formatting elements like the title and author information are represented but not consistently. The structure preservation score is slightly better, as the overall logical flow is retained. While the parser identifies and retains some sections and headings,  it does not perfectly replicate the original document's layout. The overall score reflects a balance between the relatively strong content accuracy and readability, and the weaker performance in formatting and structure preservation. The output is usable but could benefit from improved handling of structural elements within the PDF."
+                        }
+                    },
+                    {
+                        "name": "protocol.md",
+                        "n_pages": 6,
+                        "load_time": 0.2718970775604248,
+                        "load_time_per_page": 0.045316179593404136,
+                        "evaluation": {
+                            "formatting_score": 6.0,
+                            "structure_preservation": 7.0,
+                            "content_accuracy": 9.0,
+                            "readability": 8.0,
+                            "overall_score": 7.5,
+                            "feedback": "The parser does a reasonable job extracting the content and preserving the overall structure of the PDF.  The content accuracy is high, with minimal loss of information. Readability is good, although some formatting improvements could enhance the user experience. \n\nSpecifically:\n\n* **Formatting:** The parser struggles with consistent header formatting and the use of page numbers within the text.  The use of '###' as a header marker is a crude approximation of the original formatting.  List items are preserved but lack the original bullet point formatting. Spacing and alignment are somewhat inconsistent. \n* **Structure:** The overall structure of the document (sections, headings, etc.) is largely maintained.  However, page breaks are not explicitly represented, potentially leading to some confusion.  The flow of the meeting minutes is preserved well. \n* **Content:**  The text is largely accurate, with no significant omissions or errors observed within the truncated output.  The date and numbers appear correctly.  \n* **Readability:** The output is readable. However, better formatting would improve readability further.   The consistent use of 'Justerare:' on multiple lines, for example, might be better handled by the parser, perhaps by grouping them under a common heading. \n\nOverall, the parser performs well for a basic extraction task, but more sophisticated handling of formatting, page breaks, and header/list representation is needed to achieve a higher score."
+                        }
+                    }
+                ],
+                "avg_load_time_per_page": 0.025199077747486254,
+                "avg_formatting_score": 6.333333333333333,
+                "avg_structure_preservation": 7.333333333333333,
+                "avg_content_accuracy": 9.0,
+                "avg_readability": 8.333333333333334,
+                "avg_overall_score": 7.733333333333333
+            }
+        },
+        "pdftext_json": {
+            "parser_info": {
+                "name": "pdftext_json",
+                "files_loaded": [],
+                "avg_load_time_per_page": null
+            },
+            "evaluated_info": {
+                "name": "pdftext_json",
+                "files_loaded": [],
+                "avg_load_time_per_page": null,
+                "avg_formatting_score": null,
+                "avg_structure_preservation": null,
+                "avg_content_accuracy": null,
+                "avg_readability": null,
+                "avg_overall_score": null
+            }
+        },
+        "pymupdf4llm": {
+            "parser_info": {
+                "name": "pymupdf4llm",
+                "files_loaded": [
+                    {
+                        "name": "protocol.pdf",
+                        "n_pages": 6,
+                        "load_time": 0.18229913711547852,
+                        "load_time_per_page": 0.030383189519246418
+                    },
+                    {
+                        "name": "cv_saljare.pdf",
+                        "n_pages": 1,
+                        "load_time": 0.08217310905456543,
+                        "load_time_per_page": 0.08217310905456543
+                    },
+                    {
+                        "name": "308-an-ai-strategy-for-sweden-pdf-version-1020240408.pdf",
+                        "n_pages": 18,
+                        "load_time": 1.6322002410888672,
+                        "load_time_per_page": 0.09067779117160374
+                    }
+                ],
+                "avg_load_time_per_page": 0.0677446965818052
+            },
+            "evaluated_info": {
+                "name": "pymupdf4llm",
+                "files_loaded": [
+                    {
+                        "name": "cv_saljare.md",
+                        "n_pages": 1,
+                        "load_time": 0.08217310905456543,
+                        "load_time_per_page": 0.08217310905456543,
+                        "evaluation": {
+                            "formatting_score": 6.0,
+                            "structure_preservation": 7.0,
+                            "content_accuracy": 9.0,
+                            "readability": 8.0,
+                            "overall_score": 7.5,
+                            "feedback": "The parser does a reasonable job of extracting the content and preserving the overall structure of the CV.  The content accuracy is high, with most information correctly captured. Readability is good; the text flows logically. However, the formatting score is lower because the parser struggles with precise alignment and hierarchical formatting (e.g., inconsistent use of headings and spacing).  Some formatting elements like the rating system (3/5, 4/5, 5/5) are retained which indicates some level of formatting recognition, but the overall formatting is inconsistent.  The structure preservation score is also slightly lower as the parser didn't perfectly replicate the visual layout of the original PDF; some information might be slightly out of place compared to the original. The use of underscores for italics in work experience sections is not ideal but acceptable.  Overall, the output is usable and provides a good representation of the original CV, but improvements in formatting consistency are needed for a higher score."
+                        }
+                    },
+                    {
+                        "name": "308-an-ai-strategy-for-sweden-pdf-version-1020240408.md",
+                        "n_pages": 18,
+                        "load_time": 1.6322002410888672,
+                        "load_time_per_page": 0.09067779117160374,
+                        "evaluation": {
+                            "formatting_score": 3.0,
+                            "structure_preservation": 4.0,
+                            "content_accuracy": 7.0,
+                            "readability": 7.0,
+                            "overall_score": 5.0,
+                            "feedback": "The parser does a fair job at extracting the text content from the PDF, achieving reasonable content accuracy and readability.  However, it severely fails to preserve the original formatting and structure.  The output is a largely unstructured block of text with inconsistent spacing and line breaks, losing most of the original visual organization, headings, and section divisions.  While the text is largely accurate, the lack of formatting significantly reduces its usability. The presence of duplicated text segments further indicates problems in structural processing.  The parser struggles with handling the multi-lingual content, although it seems to extract both Swedish and English fairly well, without clear indication of where each starts.  To improve, the parser needs to better handle document structure elements (headings, paragraphs, etc.) and incorporate visual cues to maintain the original layout, potentially implementing Optical Character Recognition (OCR) more effectively or applying more sophisticated natural language processing techniques to better identify and reconstruct the document's logical segments."
+                        }
+                    },
+                    {
+                        "name": "protocol.md",
+                        "n_pages": 6,
+                        "load_time": 0.18229913711547852,
+                        "load_time_per_page": 0.030383189519246418,
+                        "evaluation": {
+                            "formatting_score": 6.0,
+                            "structure_preservation": 7.0,
+                            "content_accuracy": 9.0,
+                            "readability": 8.0,
+                            "overall_score": 7.5,
+                            "feedback": "The parser output demonstrates a reasonable attempt at extracting information from the PDF.  The content accuracy is high, with most of the text correctly captured. Readability is also good, with the text presented in a logical order and easily understandable.  However, the formatting score is lower because the parser doesn't perfectly replicate the original PDF's formatting. While it correctly identifies and separates sections like 'Justerare' and 'Politiska sekreterare', the visual presentation lacks the original's precise alignment and spacing.  There is no indication of any potential lists or tables that may exist in the original, and there\u2019s no preservation of font emphasis.  The structure preservation score is slightly higher because, while the formatting is imperfect, the logical flow and section divisions are mostly maintained.  The page breaks in the original are not reflected which impacts the overall structure. The absence of page breaks also points to some minor issues with handling the structure in a page-aware manner. Overall, the parser performs adequately, but improvements in formatting and handling of page breaks would significantly enhance the quality of the output."
+                        }
+                    }
+                ],
+                "avg_load_time_per_page": 0.0677446965818052,
+                "avg_formatting_score": 5.0,
+                "avg_structure_preservation": 6.0,
+                "avg_content_accuracy": 8.333333333333334,
+                "avg_readability": 7.666666666666667,
+                "avg_overall_score": 6.666666666666667
+            }
+        },
+        "pymupdf": {
+            "parser_info": {
+                "name": "pymupdf",
+                "files_loaded": [
+                    {
+                        "name": "protocol.pdf",
+                        "n_pages": 6,
+                        "load_time": 0.005917072296142578,
+                        "load_time_per_page": 0.000986178716023763
+                    },
+                    {
+                        "name": "cv_saljare.pdf",
+                        "n_pages": 1,
+                        "load_time": 0.0036780834197998047,
+                        "load_time_per_page": 0.0036780834197998047
+                    },
+                    {
+                        "name": "308-an-ai-strategy-for-sweden-pdf-version-1020240408.pdf",
+                        "n_pages": 18,
+                        "load_time": 0.0652310848236084,
+                        "load_time_per_page": 0.0036239491568671334
+                    }
+                ],
+                "avg_load_time_per_page": 0.0027627370975635674
+            },
+            "evaluated_info": {
+                "name": "pymupdf",
+                "files_loaded": [
+                    {
+                        "name": "cv_saljare.md",
+                        "n_pages": 1,
+                        "load_time": 0.0036780834197998047,
+                        "load_time_per_page": 0.0036780834197998047,
+                        "evaluation": {
+                            "formatting_score": 7.0,
+                            "structure_preservation": 8.0,
+                            "content_accuracy": 9.0,
+                            "readability": 9.0,
+                            "overall_score": 8.2,
+                            "feedback": "The parser performs well overall, capturing most of the content and structure accurately.  The formatting score is slightly lower because while the headings and sections are largely preserved, the precise spacing and alignment from the original PDF are not perfectly replicated.  The use of ### for subheadings is a reasonable approximation.  The content is very accurate, with only minor potential formatting differences. The readability is high as the text is well-structured and easily understood.  The structure preservation is good; the logical flow is maintained, and the section divisions are clear.  An area of potential improvement would be to better represent the layout nuances, such as the visual grouping of information or the use of bullet points for lists in the 'Kurser' section.  The overall score reflects a strong performance with only minor imperfections in formatting and layout details."
+                        }
+                    },
+                    {
+                        "name": "308-an-ai-strategy-for-sweden-pdf-version-1020240408.md",
+                        "n_pages": 18,
+                        "load_time": 0.0652310848236084,
+                        "load_time_per_page": 0.0036239491568671334,
+                        "evaluation": {
+                            "formatting_score": 0.0,
+                            "structure_preservation": 0.0,
+                            "content_accuracy": 0.0,
+                            "readability": 0.0,
+                            "overall_score": 0.0,
+                            "feedback": "Evaluation failed: 429 RESOURCE_EXHAUSTED. {'error': {'code': 429, 'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits.', 'status': 'RESOURCE_EXHAUSTED', 'details': [{'@type': 'type.googleapis.com/google.rpc.QuotaFailure', 'violations': [{'quotaMetric': 'generativelanguage.googleapis.com/generate_content_free_tier_requests', 'quotaId': 'GenerateRequestsPerMinutePerProjectPerModel-FreeTier', 'quotaDimensions': {'location': 'global', 'model': 'gemini-1.5-flash'}, 'quotaValue': '15'}]}, {'@type': 'type.googleapis.com/google.rpc.Help', 'links': [{'description': 'Learn more about Gemini API quotas', 'url': 'https://ai.google.dev/gemini-api/docs/rate-limits'}]}, {'@type': 'type.googleapis.com/google.rpc.RetryInfo', 'retryDelay': '9s'}]}}"
+                        }
+                    },
+                    {
+                        "name": "protocol.md",
+                        "n_pages": 6,
+                        "load_time": 0.005917072296142578,
+                        "load_time_per_page": 0.000986178716023763,
+                        "evaluation": {
+                            "formatting_score": 0.0,
+                            "structure_preservation": 0.0,
+                            "content_accuracy": 0.0,
+                            "readability": 0.0,
+                            "overall_score": 0.0,
+                            "feedback": "Evaluation failed: 429 RESOURCE_EXHAUSTED. {'error': {'code': 429, 'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits.', 'status': 'RESOURCE_EXHAUSTED', 'details': [{'@type': 'type.googleapis.com/google.rpc.QuotaFailure', 'violations': [{'quotaMetric': 'generativelanguage.googleapis.com/generate_content_free_tier_requests', 'quotaId': 'GenerateRequestsPerMinutePerProjectPerModel-FreeTier', 'quotaDimensions': {'location': 'global', 'model': 'gemini-1.5-flash'}, 'quotaValue': '15'}]}, {'@type': 'type.googleapis.com/google.rpc.Help', 'links': [{'description': 'Learn more about Gemini API quotas', 'url': 'https://ai.google.dev/gemini-api/docs/rate-limits'}]}, {'@type': 'type.googleapis.com/google.rpc.RetryInfo', 'retryDelay': '9s'}]}}"
+                        }
+                    }
+                ],
+                "avg_load_time_per_page": 0.0027627370975635674,
+                "avg_formatting_score": 2.3333333333333335,
+                "avg_structure_preservation": 2.6666666666666665,
+                "avg_content_accuracy": 3.0,
+                "avg_readability": 3.0,
+                "avg_overall_score": 2.733333333333333
+            }
+        },
+        "pypdf": {
+            "parser_info": {
+                "name": "pypdf",
+                "files_loaded": [
+                    {
+                        "name": "protocol.pdf",
+                        "n_pages": 6,
+                        "load_time": 0.047139883041381836,
+                        "load_time_per_page": 0.007856647173563639
+                    },
+                    {
+                        "name": "cv_saljare.pdf",
+                        "n_pages": 1,
+                        "load_time": 0.009084939956665039,
+                        "load_time_per_page": 0.009084939956665039
+                    },
+                    {
+                        "name": "308-an-ai-strategy-for-sweden-pdf-version-1020240408.pdf",
+                        "n_pages": 18,
+                        "load_time": 1.8708739280700684,
+                        "load_time_per_page": 0.10393744044833714
+                    }
+                ],
+                "avg_load_time_per_page": 0.04029300919285527
+            },
+            "evaluated_info": {
+                "name": "pypdf",
+                "files_loaded": [
+                    {
+                        "name": "cv_saljare.md",
+                        "n_pages": 1,
+                        "load_time": 0.009084939956665039,
+                        "load_time_per_page": 0.009084939956665039,
+                        "evaluation": {
+                            "formatting_score": 0.0,
+                            "structure_preservation": 0.0,
+                            "content_accuracy": 0.0,
+                            "readability": 0.0,
+                            "overall_score": 0.0,
+                            "feedback": "Evaluation failed: 429 RESOURCE_EXHAUSTED. {'error': {'code': 429, 'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits.', 'status': 'RESOURCE_EXHAUSTED', 'details': [{'@type': 'type.googleapis.com/google.rpc.QuotaFailure', 'violations': [{'quotaMetric': 'generativelanguage.googleapis.com/generate_content_free_tier_requests', 'quotaId': 'GenerateRequestsPerMinutePerProjectPerModel-FreeTier', 'quotaDimensions': {'location': 'global', 'model': 'gemini-1.5-flash'}, 'quotaValue': '15'}]}, {'@type': 'type.googleapis.com/google.rpc.Help', 'links': [{'description': 'Learn more about Gemini API quotas', 'url': 'https://ai.google.dev/gemini-api/docs/rate-limits'}]}, {'@type': 'type.googleapis.com/google.rpc.RetryInfo', 'retryDelay': '7s'}]}}"
+                        }
+                    },
+                    {
+                        "name": "308-an-ai-strategy-for-sweden-pdf-version-1020240408.md",
+                        "n_pages": 18,
+                        "load_time": 1.8708739280700684,
+                        "load_time_per_page": 0.10393744044833714,
+                        "evaluation": {
+                            "formatting_score": 0.0,
+                            "structure_preservation": 0.0,
+                            "content_accuracy": 0.0,
+                            "readability": 0.0,
+                            "overall_score": 0.0,
+                            "feedback": "Evaluation failed: 429 RESOURCE_EXHAUSTED. {'error': {'code': 429, 'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits.', 'status': 'RESOURCE_EXHAUSTED', 'details': [{'@type': 'type.googleapis.com/google.rpc.QuotaFailure', 'violations': [{'quotaMetric': 'generativelanguage.googleapis.com/generate_content_free_tier_requests', 'quotaId': 'GenerateRequestsPerMinutePerProjectPerModel-FreeTier', 'quotaDimensions': {'location': 'global', 'model': 'gemini-1.5-flash'}, 'quotaValue': '15'}]}, {'@type': 'type.googleapis.com/google.rpc.Help', 'links': [{'description': 'Learn more about Gemini API quotas', 'url': 'https://ai.google.dev/gemini-api/docs/rate-limits'}]}, {'@type': 'type.googleapis.com/google.rpc.RetryInfo', 'retryDelay': '7s'}]}}"
+                        }
+                    },
+                    {
+                        "name": "protocol.md",
+                        "n_pages": 6,
+                        "load_time": 0.047139883041381836,
+                        "load_time_per_page": 0.007856647173563639,
+                        "evaluation": {
+                            "formatting_score": 0.0,
+                            "structure_preservation": 0.0,
+                            "content_accuracy": 0.0,
+                            "readability": 0.0,
+                            "overall_score": 0.0,
+                            "feedback": "Evaluation failed: 429 RESOURCE_EXHAUSTED. {'error': {'code': 429, 'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits.', 'status': 'RESOURCE_EXHAUSTED', 'details': [{'@type': 'type.googleapis.com/google.rpc.QuotaFailure', 'violations': [{'quotaMetric': 'generativelanguage.googleapis.com/generate_content_free_tier_requests', 'quotaId': 'GenerateRequestsPerMinutePerProjectPerModel-FreeTier', 'quotaDimensions': {'location': 'global', 'model': 'gemini-1.5-flash'}, 'quotaValue': '15'}]}, {'@type': 'type.googleapis.com/google.rpc.Help', 'links': [{'description': 'Learn more about Gemini API quotas', 'url': 'https://ai.google.dev/gemini-api/docs/rate-limits'}]}, {'@type': 'type.googleapis.com/google.rpc.RetryInfo', 'retryDelay': '7s'}]}}"
+                        }
+                    }
+                ],
+                "avg_load_time_per_page": 0.04029300919285527,
+                "avg_formatting_score": 0.0,
+                "avg_structure_preservation": 0.0,
+                "avg_content_accuracy": 0.0,
+                "avg_readability": 0.0,
+                "avg_overall_score": 0.0
+            }
+        },
+        "pypdfium2": {
+            "parser_info": {
+                "name": "pypdfium2",
+                "files_loaded": [
+                    {
+                        "name": "protocol.pdf",
+                        "n_pages": 6,
+                        "load_time": 0.005936861038208008,
+                        "load_time_per_page": 0.0009894768397013347
+                    },
+                    {
+                        "name": "cv_saljare.pdf",
+                        "n_pages": 1,
+                        "load_time": 0.0019409656524658203,
+                        "load_time_per_page": 0.0019409656524658203
+                    },
+                    {
+                        "name": "308-an-ai-strategy-for-sweden-pdf-version-1020240408.pdf",
+                        "n_pages": 18,
+                        "load_time": 0.05516219139099121,
+                        "load_time_per_page": 0.0030645661883884007
+                    }
+                ],
+                "avg_load_time_per_page": 0.001998336226851852
+            },
+            "evaluated_info": {
+                "name": "pypdfium2",
+                "files_loaded": [
+                    {
+                        "name": "cv_saljare.md",
+                        "n_pages": 1,
+                        "load_time": 0.0019409656524658203,
+                        "load_time_per_page": 0.0019409656524658203,
+                        "evaluation": {
+                            "formatting_score": 0.0,
+                            "structure_preservation": 0.0,
+                            "content_accuracy": 0.0,
+                            "readability": 0.0,
+                            "overall_score": 0.0,
+                            "feedback": "Evaluation failed: 429 RESOURCE_EXHAUSTED. {'error': {'code': 429, 'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits.', 'status': 'RESOURCE_EXHAUSTED', 'details': [{'@type': 'type.googleapis.com/google.rpc.QuotaFailure', 'violations': [{'quotaMetric': 'generativelanguage.googleapis.com/generate_content_free_tier_requests', 'quotaId': 'GenerateRequestsPerMinutePerProjectPerModel-FreeTier', 'quotaDimensions': {'location': 'global', 'model': 'gemini-1.5-flash'}, 'quotaValue': '15'}]}, {'@type': 'type.googleapis.com/google.rpc.Help', 'links': [{'description': 'Learn more about Gemini API quotas', 'url': 'https://ai.google.dev/gemini-api/docs/rate-limits'}]}, {'@type': 'type.googleapis.com/google.rpc.RetryInfo', 'retryDelay': '6s'}]}}"
+                        }
+                    },
+                    {
+                        "name": "308-an-ai-strategy-for-sweden-pdf-version-1020240408.md",
+                        "n_pages": 18,
+                        "load_time": 0.05516219139099121,
+                        "load_time_per_page": 0.0030645661883884007,
+                        "evaluation": {
+                            "formatting_score": 0.0,
+                            "structure_preservation": 0.0,
+                            "content_accuracy": 0.0,
+                            "readability": 0.0,
+                            "overall_score": 0.0,
+                            "feedback": "Evaluation failed: 429 RESOURCE_EXHAUSTED. {'error': {'code': 429, 'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits.', 'status': 'RESOURCE_EXHAUSTED', 'details': [{'@type': 'type.googleapis.com/google.rpc.QuotaFailure', 'violations': [{'quotaMetric': 'generativelanguage.googleapis.com/generate_content_free_tier_requests', 'quotaId': 'GenerateRequestsPerMinutePerProjectPerModel-FreeTier', 'quotaDimensions': {'model': 'gemini-1.5-flash', 'location': 'global'}, 'quotaValue': '15'}]}, {'@type': 'type.googleapis.com/google.rpc.Help', 'links': [{'description': 'Learn more about Gemini API quotas', 'url': 'https://ai.google.dev/gemini-api/docs/rate-limits'}]}, {'@type': 'type.googleapis.com/google.rpc.RetryInfo', 'retryDelay': '6s'}]}}"
+                        }
+                    },
+                    {
+                        "name": "protocol.md",
+                        "n_pages": 6,
+                        "load_time": 0.005936861038208008,
+                        "load_time_per_page": 0.0009894768397013347,
+                        "evaluation": {
+                            "formatting_score": 0.0,
+                            "structure_preservation": 0.0,
+                            "content_accuracy": 0.0,
+                            "readability": 0.0,
+                            "overall_score": 0.0,
+                            "feedback": "Evaluation failed: 429 RESOURCE_EXHAUSTED. {'error': {'code': 429, 'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits.', 'status': 'RESOURCE_EXHAUSTED', 'details': [{'@type': 'type.googleapis.com/google.rpc.QuotaFailure', 'violations': [{'quotaMetric': 'generativelanguage.googleapis.com/generate_content_free_tier_requests', 'quotaId': 'GenerateRequestsPerMinutePerProjectPerModel-FreeTier', 'quotaDimensions': {'location': 'global', 'model': 'gemini-1.5-flash'}, 'quotaValue': '15'}]}, {'@type': 'type.googleapis.com/google.rpc.Help', 'links': [{'description': 'Learn more about Gemini API quotas', 'url': 'https://ai.google.dev/gemini-api/docs/rate-limits'}]}, {'@type': 'type.googleapis.com/google.rpc.RetryInfo', 'retryDelay': '6s'}]}}"
+                        }
+                    }
+                ],
+                "avg_load_time_per_page": 0.001998336226851852,
+                "avg_formatting_score": 0.0,
+                "avg_structure_preservation": 0.0,
+                "avg_content_accuracy": 0.0,
+                "avg_readability": 0.0,
+                "avg_overall_score": 0.0
+            }
+        },
+        "unstructured_fast": {
+            "parser_info": {
+                "name": "unstructured_fast",
+                "files_loaded": [
+                    {
+                        "name": "protocol.pdf",
+                        "n_pages": 6,
+                        "load_time": 1.8167080879211426,
+                        "load_time_per_page": 0.30278468132019043
+                    },
+                    {
+                        "name": "cv_saljare.pdf",
+                        "n_pages": 1,
+                        "load_time": 0.024202823638916016,
+                        "load_time_per_page": 0.024202823638916016
+                    },
+                    {
+                        "name": "308-an-ai-strategy-for-sweden-pdf-version-1020240408.pdf",
+                        "n_pages": 18,
+                        "load_time": 2.2510828971862793,
+                        "load_time_per_page": 0.1250601609547933
+                    }
+                ],
+                "avg_load_time_per_page": 0.15068255530463326
+            },
+            "evaluated_info": {
+                "name": "unstructured_fast",
+                "files_loaded": [
+                    {
+                        "name": "cv_saljare.md",
+                        "n_pages": 1,
+                        "load_time": 0.024202823638916016,
+                        "load_time_per_page": 0.024202823638916016,
+                        "evaluation": {
+                            "formatting_score": 6.0,
+                            "structure_preservation": 7.0,
+                            "content_accuracy": 9.0,
+                            "readability": 8.0,
+                            "overall_score": 7.5,
+                            "feedback": "The parser output demonstrates a reasonable attempt at extracting information from the CV.  Content accuracy is high, with most of the text correctly captured. Readability is also good; the extracted text flows logically.  However, formatting suffers. While the major sections are identified, the subtle formatting nuances (like the visual separation between different sections, the visual formatting of the 'Kompetenser' section,  and potentially different font sizes/styles for headings) are lost. The parser correctly identifies and preserves the hierarchical structure to a significant degree, but the visual representation lacks the sophistication of the original.  The numerical ratings (3/5, 4/5, 5/5) are preserved, which is positive. Overall, the output is usable, but improvements in formatting would significantly enhance its quality and user experience."
+                        }
+                    },
+                    {
+                        "name": "308-an-ai-strategy-for-sweden-pdf-version-1020240408.md",
+                        "n_pages": 18,
+                        "load_time": 2.2510828971862793,
+                        "load_time_per_page": 0.1250601609547933,
+                        "evaluation": {
+                            "formatting_score": 0.0,
+                            "structure_preservation": 0.0,
+                            "content_accuracy": 0.0,
+                            "readability": 0.0,
+                            "overall_score": 0.0,
+                            "feedback": "Evaluation failed: 429 RESOURCE_EXHAUSTED. {'error': {'code': 429, 'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits.', 'status': 'RESOURCE_EXHAUSTED', 'details': [{'@type': 'type.googleapis.com/google.rpc.QuotaFailure', 'violations': [{'quotaMetric': 'generativelanguage.googleapis.com/generate_content_free_tier_requests', 'quotaId': 'GenerateRequestsPerDayPerProjectPerModel-FreeTier', 'quotaDimensions': {'model': 'gemini-1.5-flash', 'location': 'global'}, 'quotaValue': '50'}]}, {'@type': 'type.googleapis.com/google.rpc.Help', 'links': [{'description': 'Learn more about Gemini API quotas', 'url': 'https://ai.google.dev/gemini-api/docs/rate-limits'}]}, {'@type': 'type.googleapis.com/google.rpc.RetryInfo', 'retryDelay': '47s'}]}}"
+                        }
+                    },
+                    {
+                        "name": "protocol.md",
+                        "n_pages": 6,
+                        "load_time": 1.8167080879211426,
+                        "load_time_per_page": 0.30278468132019043,
+                        "evaluation": {
+                            "formatting_score": 0.0,
+                            "structure_preservation": 0.0,
+                            "content_accuracy": 0.0,
+                            "readability": 0.0,
+                            "overall_score": 0.0,
+                            "feedback": "Evaluation failed: 429 RESOURCE_EXHAUSTED. {'error': {'code': 429, 'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits.', 'status': 'RESOURCE_EXHAUSTED', 'details': [{'@type': 'type.googleapis.com/google.rpc.QuotaFailure', 'violations': [{'quotaMetric': 'generativelanguage.googleapis.com/generate_content_free_tier_requests', 'quotaId': 'GenerateRequestsPerDayPerProjectPerModel-FreeTier', 'quotaDimensions': {'location': 'global', 'model': 'gemini-1.5-flash'}, 'quotaValue': '50'}]}, {'@type': 'type.googleapis.com/google.rpc.Help', 'links': [{'description': 'Learn more about Gemini API quotas', 'url': 'https://ai.google.dev/gemini-api/docs/rate-limits'}]}, {'@type': 'type.googleapis.com/google.rpc.RetryInfo', 'retryDelay': '47s'}]}}"
+                        }
+                    }
+                ],
+                "avg_load_time_per_page": 0.15068255530463326,
+                "avg_formatting_score": 2.0,
+                "avg_structure_preservation": 2.3333333333333335,
+                "avg_content_accuracy": 3.0,
+                "avg_readability": 2.6666666666666665,
+                "avg_overall_score": 2.5
+            }
+        },
+        "unstructured_hires": {
+            "parser_info": {
+                "name": "unstructured_hires",
+                "files_loaded": [],
+                "avg_load_time_per_page": null
+            },
+            "evaluated_info": {
+                "name": "unstructured_hires",
+                "files_loaded": [],
+                "avg_load_time_per_page": null,
+                "avg_formatting_score": null,
+                "avg_structure_preservation": null,
+                "avg_content_accuracy": null,
+                "avg_readability": null,
+                "avg_overall_score": null
+            }
+        },
+        "markitdown": {
+            "parser_info": {
+                "name": "markitdown",
+                "files_loaded": [
+                    {
+                        "name": "protocol.pdf",
+                        "n_pages": 6,
+                        "load_time": 0.24345111846923828,
+                        "load_time_per_page": 0.04057518641153971
+                    },
+                    {
+                        "name": "cv_saljare.pdf",
+                        "n_pages": 1,
+                        "load_time": 0.019172191619873047,
+                        "load_time_per_page": 0.019172191619873047
+                    },
+                    {
+                        "name": "308-an-ai-strategy-for-sweden-pdf-version-1020240408.pdf",
+                        "n_pages": 18,
+                        "load_time": 2.155601978302002,
+                        "load_time_per_page": 0.11975566546122234
+                    }
+                ],
+                "avg_load_time_per_page": 0.05983434783087837
+            },
+            "evaluated_info": {
+                "name": "markitdown",
+                "files_loaded": [
+                    {
+                        "name": "cv_saljare.md",
+                        "n_pages": 1,
+                        "load_time": 0.019172191619873047,
+                        "load_time_per_page": 0.019172191619873047,
+                        "evaluation": {
+                            "formatting_score": 0.0,
+                            "structure_preservation": 0.0,
+                            "content_accuracy": 0.0,
+                            "readability": 0.0,
+                            "overall_score": 0.0,
+                            "feedback": "Evaluation failed: 429 RESOURCE_EXHAUSTED. {'error': {'code': 429, 'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits.', 'status': 'RESOURCE_EXHAUSTED', 'details': [{'@type': 'type.googleapis.com/google.rpc.QuotaFailure', 'violations': [{'quotaMetric': 'generativelanguage.googleapis.com/generate_content_free_tier_requests', 'quotaId': 'GenerateRequestsPerDayPerProjectPerModel-FreeTier', 'quotaDimensions': {'model': 'gemini-1.5-flash', 'location': 'global'}, 'quotaValue': '50'}]}, {'@type': 'type.googleapis.com/google.rpc.Help', 'links': [{'description': 'Learn more about Gemini API quotas', 'url': 'https://ai.google.dev/gemini-api/docs/rate-limits'}]}, {'@type': 'type.googleapis.com/google.rpc.RetryInfo', 'retryDelay': '28s'}]}}"
+                        }
+                    },
+                    {
+                        "name": "308-an-ai-strategy-for-sweden-pdf-version-1020240408.md",
+                        "n_pages": 18,
+                        "load_time": 2.155601978302002,
+                        "load_time_per_page": 0.11975566546122234,
+                        "evaluation": {
+                            "formatting_score": 0.0,
+                            "structure_preservation": 0.0,
+                            "content_accuracy": 0.0,
+                            "readability": 0.0,
+                            "overall_score": 0.0,
+                            "feedback": "Evaluation failed: 429 RESOURCE_EXHAUSTED. {'error': {'code': 429, 'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits.', 'status': 'RESOURCE_EXHAUSTED', 'details': [{'@type': 'type.googleapis.com/google.rpc.QuotaFailure', 'violations': [{'quotaMetric': 'generativelanguage.googleapis.com/generate_content_free_tier_requests', 'quotaId': 'GenerateRequestsPerDayPerProjectPerModel-FreeTier', 'quotaDimensions': {'location': 'global', 'model': 'gemini-1.5-flash'}, 'quotaValue': '50'}]}, {'@type': 'type.googleapis.com/google.rpc.Help', 'links': [{'description': 'Learn more about Gemini API quotas', 'url': 'https://ai.google.dev/gemini-api/docs/rate-limits'}]}, {'@type': 'type.googleapis.com/google.rpc.RetryInfo', 'retryDelay': '28s'}]}}"
+                        }
+                    },
+                    {
+                        "name": "protocol.md",
+                        "n_pages": 6,
+                        "load_time": 0.24345111846923828,
+                        "load_time_per_page": 0.04057518641153971,
+                        "evaluation": {
+                            "formatting_score": 0.0,
+                            "structure_preservation": 0.0,
+                            "content_accuracy": 0.0,
+                            "readability": 0.0,
+                            "overall_score": 0.0,
+                            "feedback": "Evaluation failed: 429 RESOURCE_EXHAUSTED. {'error': {'code': 429, 'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits.', 'status': 'RESOURCE_EXHAUSTED', 'details': [{'@type': 'type.googleapis.com/google.rpc.QuotaFailure', 'violations': [{'quotaMetric': 'generativelanguage.googleapis.com/generate_content_free_tier_requests', 'quotaId': 'GenerateRequestsPerDayPerProjectPerModel-FreeTier', 'quotaDimensions': {'location': 'global', 'model': 'gemini-1.5-flash'}, 'quotaValue': '50'}]}, {'@type': 'type.googleapis.com/google.rpc.Help', 'links': [{'description': 'Learn more about Gemini API quotas', 'url': 'https://ai.google.dev/gemini-api/docs/rate-limits'}]}, {'@type': 'type.googleapis.com/google.rpc.RetryInfo', 'retryDelay': '28s'}]}}"
+                        }
+                    }
+                ],
+                "avg_load_time_per_page": 0.05983434783087837,
+                "avg_formatting_score": 0.0,
+                "avg_structure_preservation": 0.0,
+                "avg_content_accuracy": 0.0,
+                "avg_readability": 0.0,
+                "avg_overall_score": 0.0
+            }
+        },
+        "gemini_2_0_flash": {
+            "parser_info": {
+                "name": "gemini_2_0_flash",
+                "files_loaded": [],
+                "avg_load_time_per_page": null
+            },
+            "evaluated_info": {
+                "name": "gemini_2_0_flash",
+                "files_loaded": [],
+                "avg_load_time_per_page": null,
+                "avg_formatting_score": null,
+                "avg_structure_preservation": null,
+                "avg_content_accuracy": null,
+                "avg_readability": null,
+                "avg_overall_score": null
+            }
+        },
+        "easyocr": {
+            "parser_info": {
+                "name": "easyocr",
+                "files_loaded": [],
+                "avg_load_time_per_page": null
+            },
+            "evaluated_info": {
+                "name": "easyocr",
+                "files_loaded": [],
+                "avg_load_time_per_page": null,
+                "avg_formatting_score": null,
+                "avg_structure_preservation": null,
+                "avg_content_accuracy": null,
+                "avg_readability": null,
+                "avg_overall_score": null
+            }
+        },
+        "ocr_mac": {
+            "parser_info": {
+                "name": "ocr_mac",
+                "files_loaded": [],
+                "avg_load_time_per_page": null
+            },
+            "evaluated_info": {
+                "name": "ocr_mac",
+                "files_loaded": [],
+                "avg_load_time_per_page": null,
+                "avg_formatting_score": null,
+                "avg_structure_preservation": null,
+                "avg_content_accuracy": null,
+                "avg_readability": null,
+                "avg_overall_score": null
+            }
+        },
+        "openai_vision": {
+            "parser_info": {
+                "name": "openai_vision",
+                "files_loaded": [],
+                "avg_load_time_per_page": null
+            },
+            "evaluated_info": {
+                "name": "openai_vision",
+                "files_loaded": [],
+                "avg_load_time_per_page": null,
+                "avg_formatting_score": null,
+                "avg_structure_preservation": null,
+                "avg_content_accuracy": null,
+                "avg_readability": null,
+                "avg_overall_score": null
+            }
+        }
+    }
+}
