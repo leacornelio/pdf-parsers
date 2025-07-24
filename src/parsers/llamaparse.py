@@ -4,6 +4,9 @@ from pathlib import Path
 from llama_parse import LlamaParse, ResultType
 
 from src.parsers.base import BasePdfParser
+from dotenv import load_dotenv
+
+load_dotenv()
 
 
 class LlamaParsePdfParser(BasePdfParser):

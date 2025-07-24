@@ -108,7 +108,7 @@ def rasterize_paper(
 class NougatPdfParser(BasePdfParser):
     def __init__(self) -> None:
         super().__init__()
-        self.processor = NougatProcessor.from_pretrained("facebook/nougat-base")
+        self.processor = NougatProcessor.from_pretrained("facebook/nougat-base", use_fast=True)
         self.model = VisionEncoderDecoderModel.from_pretrained("facebook/nougat-base")
 
         self.device = "cuda" if torch.cuda.is_available() else "cpu"

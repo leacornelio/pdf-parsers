@@ -9,7 +9,7 @@ class LlmsherpaPdfParser(BasePdfParser):
     def __init__(self) -> None:
         super().__init__()
         self.reader = LayoutPDFReader(
-            "http://localhost:5001/api/parseDocument?renderFormat=all"
+            "http://localhost:5010/api/parseDocument?renderFormat=all"
         )
 
     def _parse(self, in_path: Path) -> list[tuple[str, str]]:

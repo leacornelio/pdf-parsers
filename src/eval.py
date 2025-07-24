@@ -13,6 +13,7 @@ from google import genai
 
 from src.utils import write_to_file
 from src.parsers.base import BasePdfParser
+import ollama
 
 load_dotenv()
 
@@ -46,31 +47,31 @@ class ParserInfo(BaseModel):
 
 class Parser(StrEnum):
     DOCLING = auto()
+    EASYOCR = auto()
     LLAMA_PARSE_FAST = auto()
     LLAMA_PARSE = auto()
     LLMSHERPA = auto()
     MARKER = auto()
+    MARKITDOWN = auto()
     NOUGAT = auto()
+    # OCR_MAC = auto()
+    # OPENAI_VISION = auto()
     PDFMINER = auto()
     PDFPLUMBER = auto()
     PDFPLUMBER_LAYOUT = auto()
     PDFTEXT = auto()
-    PDFTEXT_JSON = auto()
+    # PDFTEXT_JSON = auto()
     PYMUPDF4LLM = auto()
     PYMUPDF = auto()
     PYPDF = auto()
     PYPDFIUM2 = auto()
+    QWEN_VISION = auto()
+    RAPIDOCR = auto()
     UNSTRUCTURED_FAST = auto()
     UNSTRUCTURED_HIRES = auto()
-    GOT_OCR2_0 = auto()
-    GOT_OCR2_0_FORMAT = auto()
-    MARKITDOWN = auto()
+    # GOT_OCR2_0 = auto()
+    # GOT_OCR2_0_FORMAT = auto()
     GEMINI_2_0_FLASH = auto()
-    EASYOCR = auto()
-    RAPIDOCR = auto()
-    OCR_MAC = auto()
-    OPENAI_VISION = auto()
-    QWEN_VISION = auto()
 
 
 class EvaluationMetrics(BaseModel):
@@ -105,95 +106,127 @@ def get_parser(parser: Parser) -> BasePdfParser:
     """Import at runtime to speed up initialization"""
     if parser == Parser.DOCLING:
         from src.parsers.docling import DoclingPdfParser
+
         return DoclingPdfParser()
+    if parser == Parser.EASYOCR:
+        from src.parsers.easyocr_parser import EasyOcrPdfParser
+
+        return EasyOcrPdfParser()
     if parser == Parser.GEMINI_2_0_FLASH:
-        from src.parsers.gemini_2_0_flash import Gemini2FlashParser
+        from parsers.gemini_2_0_flash import Gemini2FlashParser
+
         return Gemini2FlashParser()
-    if parser == Parser.GOT_OCR2_0:
-        from src.parsers.got_ocr import GotOcrPdfParser
-        return GotOcrPdfParser(mode="ocr")
-    if parser == Parser.GOT_OCR2_0_FORMAT:
-        from src.parsers.got_ocr import GotOcrPdfParser
-        return GotOcrPdfParser(mode="format")
+    #if parser == Parser.GOT_OCR2_0:
+    #     from parsers.got_ocr import GotOcrPdfParser
+
+    #     return GotOcrPdfParser(mode="ocr")
+    # if parser == Parser.GOT_OCR2_0_FORMAT:
+    #     from parsers.got_ocr import GotOcrPdfParser
+
+    #     return GotOcrPdfParser(mode="format")
+
     if parser == Parser.LLAMA_PARSE:
         from src.parsers.llamaparse import LlamaParsePdfParser
+
         return LlamaParsePdfParser(fast=False)
     if parser == Parser.LLAMA_PARSE_FAST:
         from src.parsers.llamaparse import LlamaParsePdfParser
+
         return LlamaParsePdfParser(fast=True)
     if parser == Parser.LLMSHERPA:
         from src.parsers.llmsherpa import LlmsherpaPdfParser
+
         return LlmsherpaPdfParser()
     if parser == Parser.MARKER:
         from src.parsers.marker import MarkerPdfParser
+
         return MarkerPdfParser()
     if parser == Parser.MARKITDOWN:
-        from src.parsers.markitdown import MarkitdownPdfParser
+        from parsers.markitdown import MarkitdownPdfParser
+
         return MarkitdownPdfParser()
     if parser == Parser.NOUGAT:
         from src.parsers.nougat import NougatPdfParser
+
         return NougatPdfParser()
+    # if parser == Parser.OCR_MAC:
+    #     from src.parsers.ocr_mac import OcrMacPdfParser
+
+    #     return OcrMacPdfParser()
+    # if parser == Parser.OPENAI_VISION:
+    #     from src.parsers.openai_vision import OpenAIVisionPdfParser
+
+    #     return OpenAIVisionPdfParser()
     if parser == Parser.PDFMINER:
         from src.parsers.pdfminer import PdfMinerPdfParser
+
         return PdfMinerPdfParser()
     if parser == Parser.PDFPLUMBER:
         from src.parsers.pdfplumber import PdfPlumberPdfParser
+
         return PdfPlumberPdfParser()
     if parser == Parser.PDFPLUMBER_LAYOUT:
         from src.parsers.pdfplumber import PdfPlumberPdfParser
+
         return PdfPlumberPdfParser(layout=True)
     if parser == Parser.PDFTEXT:
         from src.parsers.pdftext import PdftextPdfParser
+
         return PdftextPdfParser(output="txt")
-    if parser == Parser.PDFTEXT_JSON:
-        from src.parsers.pdftext import PdftextPdfParser
-        return PdftextPdfParser(output="json")
     if parser == Parser.PYMUPDF:
         from src.parsers.pymypdf import PyMuPdfPdfParser
+
         return PyMuPdfPdfParser()
     if parser == Parser.PYMUPDF4LLM:
         from src.parsers.pymupdf4llm import PyMuPdf4llmPdfParser
+
         return PyMuPdf4llmPdfParser()
     if parser == Parser.PYPDF:
         from src.parsers.pypdf import PyPDFParser
+
         return PyPDFParser()
     if parser == Parser.PYPDFIUM2:
-        from src.parsers.pypdfium2 import Pypdfium2PdfParser
+        from parsers.pypdfium2 import Pypdfium2PdfParser
+
         return Pypdfium2PdfParser()
-    if parser == Parser.UNSTRUCTURED_FAST:
-        from src.parsers.unstructured import UnstructuredPdfParser
-        return UnstructuredPdfParser(strategy="fast")
-    if parser == Parser.UNSTRUCTURED_HIRES:
-        from src.parsers.unstructured import UnstructuredPdfParser
-        return UnstructuredPdfParser(strategy="hi_res")
-    if parser == Parser.EASYOCR:
-        from src.parsers.easyocr_parser import EasyOcrPdfParser
-        return EasyOcrPdfParser()
-    if parser == Parser.RAPIDOCR:
-        from src.parsers.rapidocr import RapidOcrPdfParser
-        return RapidOcrPdfParser()
-    if parser == Parser.OCR_MAC:
-        from src.parsers.ocr_mac import OcrMacPdfParser
-        return OcrMacPdfParser()
-    if parser == Parser.OPENAI_VISION:
-        from src.parsers.openai_vision import OpenAIVisionPdfParser
-        return OpenAIVisionPdfParser()
     if parser == Parser.QWEN_VISION:
         from src.parsers.qwen_vision import QwenVisionPdfParser
+
         return QwenVisionPdfParser()
+    if parser == Parser.RAPIDOCR:
+        from src.parsers.rapidocr import RapidOcrPdfParser
+
+        return RapidOcrPdfParser()
+    if parser == Parser.UNSTRUCTURED_FAST:
+        from parsers.unstructured import UnstructuredPdfParser
+
+        return UnstructuredPdfParser(strategy="fast")
+    if parser == Parser.UNSTRUCTURED_HIRES:
+        from parsers.unstructured import UnstructuredPdfParser
+
+        return UnstructuredPdfParser(strategy="hi_res")
 
     raise NotImplementedError(f"Parser not implemented: {parser}")
 
 
 @cache
 def get_n_pages(path: Path) -> int:
-    pdf_reader = pypdf.PdfReader(path)
-    return len(pdf_reader.pages)
+    try:
+        pdf_reader = pypdf.PdfReader(path)
+        return len(pdf_reader.pages)
+    except Exception as e:
+        print(f"Error reading PDF {path.name}: {e}")
+        raise
 
 
-def run_parser(parser_: Parser, max_docs: int = None) -> ParserInfo:
+def run_parser(parser_: Parser, max_docs: int = None, doc_path: str = None) -> ParserInfo:
     """
-    Run a parser on all documents and return parser info with timing data.
+    Run a parser on documents and return parser info with timing data.
+    
+    Args:
+        parser_: The parser to run
+        max_docs: Maximum number of documents to process
+        doc_path: Specific document path to test. If provided, only this document will be processed.
     """
     parser = get_parser(parser_)
     
@@ -204,25 +237,53 @@ def run_parser(parser_: Parser, max_docs: int = None) -> ParserInfo:
     parser_info = ParserInfo(name=parser_.value, files_loaded=[])
     
     # Get list of documents to process
-    doc_files = list(DOC_DIR.glob("*.pdf"))
-    if max_docs:
-        doc_files = doc_files[:max_docs]
+    if doc_path:
+        # Use specific document path
+        doc_path_obj = Path(doc_path)
+        if not doc_path_obj.exists():
+            raise FileNotFoundError(f"Document not found: {doc_path}")
+        doc_files = [doc_path_obj]
+        print(f"Processing specific document: {doc_path}")
+    else:
+        # Use documents from DOC_DIR
+        doc_files = list(DOC_DIR.glob("*.pdf"))
+        if max_docs:
+            doc_files = doc_files[:max_docs]
     
     for doc_path in tqdm(doc_files, desc=f"Processing documents with {parser_.value}"):
         try:
-            parser.parse(doc_path, parser_out_dir)
+            # Check page count before processing
+            try:
+                n_pages = get_n_pages(doc_path)
+                if n_pages > 25:
+                    print(f"Skipping {doc_path.name} - too many pages ({n_pages} > 25)")
+                    continue
+            except Exception as page_error:
+                print(f"Error getting page count for {doc_path.name}: {page_error}")
+                continue
             
-            n_pages = get_n_pages(doc_path)
-            loaded_file_info = LoadedFileInfo(
-                name=doc_path.name,
-                n_pages=n_pages,
-                load_time=parser.runtime,
-                load_time_per_page=parser.runtime / n_pages,
-            )
-            parser_info.files_loaded.append(loaded_file_info)
+            # Parse the document
+            try:
+                parser.parse(doc_path, parser_out_dir)
+            except Exception as parse_error:
+                print(f"Error parsing {doc_path.name} with {parser_.value}: {parse_error}")
+                continue
+            
+            # Create file info
+            try:
+                loaded_file_info = LoadedFileInfo(
+                    name=doc_path.name,
+                    n_pages=n_pages,
+                    load_time=parser.runtime,
+                    load_time_per_page=parser.runtime / n_pages,
+                )
+                parser_info.files_loaded.append(loaded_file_info)
+            except Exception as info_error:
+                print(f"Error creating file info for {doc_path.name}: {info_error}")
+                continue
             
         except Exception as e:
-            print(f"Error processing {doc_path.name} with {parser_.value}: {e}")
+            print(f"Unexpected error processing {doc_path.name} with {parser_.value}: {e}")
             continue
     
     # Calculate average load time per page
@@ -232,8 +293,12 @@ def run_parser(parser_: Parser, max_docs: int = None) -> ParserInfo:
         ) / len(parser_info.files_loaded)
     
     # Save parser info
-    parser_info_path = OUT_DIR / f"{parser_.value}_parser_info.json"
-    write_to_file(parser_info_path, parser_info.model_dump_json(indent=4))
+    try:
+        parser_info_path = OUT_DIR / f"{parser_.value}_parser_info.json"
+        write_to_file(parser_info_path, parser_info.model_dump_json(indent=4))
+    except Exception as e:
+        print(f"Error saving parser info for {parser_.value}: {e}")
+        # Continue without saving - don't fail the entire process
     
     return parser_info
 
@@ -290,7 +355,7 @@ def evaluate_parser(parser_: Parser, parser_info: ParserInfo) -> EvaluatedParser
             1. **Formatting Score (0-10)**: How well does the output preserve the original formatting, including:
                - Text alignment and spacing
                - Headers, subheaders, and text hierarchy
-               - Lists, tables, and special formatting
+               - Lists, tables, and special formatting (if a block of text does not make sense, it is likely the parser failed to format the information)
                - Font emphasis (bold, italic, etc.)
 
             2. **Structure Preservation (0-10)**: How well does the output maintain the document structure:
@@ -325,33 +390,61 @@ def evaluate_parser(parser_: Parser, parser_info: ParserInfo) -> EvaluatedParser
             """
 
             try:
-                response = genai_client.models.generate_content(
-                    model="gemini-1.5-flash",
-                    contents=evaluation_prompt
+                # response = genai_client.models.generate_content(
+                #    model="gemini-1.5-flash",
+                #    contents=evaluation_prompt
+                # )
+                response = ollama.chat(
+                    model='llama3.1:8b',  # or your chosen model
+                    messages=[{
+                        'role': 'user',
+                        'content': evaluation_prompt
+                    }],
+                    options={
+                        'temperature': 0.1,  # Low temperature for consistent evaluation
+                        'num_predict': 1000,  # Limit response length
+                    }
                 )
 
                 # Parse the JSON response
-                response_text = response.text.strip()
-                # Extract JSON from the response (in case it's wrapped in markdown)
-                if "```json" in response_text:
-                    json_start = response_text.find("```json") + 7
-                    json_end = response_text.find("```", json_start)
-                    response_text = response_text[json_start:json_end].strip()
-                elif "```" in response_text:
-                    json_start = response_text.find("```") + 3
-                    json_end = response_text.find("```", json_start)
-                    response_text = response_text[json_start:json_end].strip()
+                response_text = response.message.content.strip().replace("```json", "").replace("```", "")
                 
-                evaluation_data = json.loads(response_text)
+                # Clean the JSON string to handle control characters
+                import re
+                # Remove or replace problematic control characters
+                response_text = re.sub(r'[\x00-\x1f\x7f-\x9f]', '', response_text)
+                # Handle escaped quotes and newlines in the feedback field
+                response_text = response_text.replace('\\n', ' ').replace('\\"', '"')
                 
-                evaluation = EvaluationMetrics(
-                    formatting_score=float(evaluation_data["formatting_score"]),
-                    structure_preservation=float(evaluation_data["structure_preservation"]),
-                    content_accuracy=float(evaluation_data["content_accuracy"]),
-                    readability=float(evaluation_data["readability"]),
-                    overall_score=float(evaluation_data["overall_score"]),
-                    feedback=evaluation_data["feedback"]
-                )
+                try:
+                    evaluation_data = json.loads(response_text)
+                    
+                    evaluation = EvaluationMetrics(
+                        formatting_score=float(evaluation_data["formatting_score"]),
+                        structure_preservation=float(evaluation_data["structure_preservation"]),
+                        content_accuracy=float(evaluation_data["content_accuracy"]),
+                        readability=float(evaluation_data["readability"]),
+                        overall_score=float(evaluation_data["overall_score"]),
+                        feedback=evaluation_data["feedback"]
+                    )
+                except (json.JSONDecodeError, KeyError, ValueError) as json_error:
+                    print(f"JSON parsing error: {json_error}")
+                    print(f"Response text: {response_text[:500]}...")
+                    # Fallback: try to extract scores using regex
+                    import re
+                    scores = {}
+                    for field in ["formatting_score", "structure_preservation", "content_accuracy", "readability", "overall_score"]:
+                        match = re.search(f'"{field}":\\s*([0-9.]+)', response_text)
+                        scores[field] = float(match.group(1)) if match else 0.0
+                    
+                    evaluation = EvaluationMetrics(
+                        formatting_score=scores.get("formatting_score", 0.0),
+                        structure_preservation=scores.get("structure_preservation", 0.0),
+                        content_accuracy=scores.get("content_accuracy", 0.0),
+                        readability=scores.get("readability", 0.0),
+                        overall_score=scores.get("overall_score", 0.0),
+                        feedback="JSON parsing failed, scores extracted using regex fallback"
+                    )
             
             except Exception as e:
                 evaluation = EvaluationMetrics(
@@ -399,10 +492,14 @@ def evaluate_parser(parser_: Parser, parser_info: ParserInfo) -> EvaluatedParser
             evaluated_parser_info.avg_load_time_per_page = sum(load_times) / len(load_times)
     
     # Save evaluation results
-    write_to_file(
-        OUT_DIR / f"{parser_.value}_evaluation_results.json", 
-        evaluated_parser_info.model_dump_json(indent=4)
-    )
+    try:
+        write_to_file(
+            OUT_DIR / f"{parser_.value}_evaluation_results.json", 
+            evaluated_parser_info.model_dump_json(indent=4)
+        )
+    except Exception as e:
+        print(f"Error saving evaluation results for {parser_.value}: {e}")
+        # Continue without saving - don't fail the entire process
     
     # Print summary
     print(f"\nEvaluation Summary for {parser_.value}:")
@@ -421,9 +518,11 @@ def evaluate_parser(parser_: Parser, parser_info: ParserInfo) -> EvaluatedParser
 
 def main(
     parsers: list[Parser] = None,
-    max_docs: int = 3,
+    max_docs: int = 20,
     skip_evaluation: bool = False,
-    skip_parsing: bool = False
+    skip_parsing: bool = False,
+    doc_path: str = None,
+    skip_existing: bool = False
 ):
     """
     Run all parsers and evaluate their output.
@@ -433,15 +532,68 @@ def main(
         max_docs: Maximum number of documents to process per parser.
         skip_evaluation: Skip the evaluation step.
         skip_parsing: Skip the parsing step (useful for re-evaluating existing outputs).
+        doc_path: Specific document path to test. If provided, only this document will be processed.
+        skip_existing: Skip parsers that already have output files in the results directory.
     """
     if parsers is None:
         parsers = list(Parser)
     
+    # Track parsers that already have outputs if skip_existing is True
+    skipped_parsers = []
+    if skip_existing:
+        original_count = len(parsers)
+        
+        for parser in parsers:
+            parser_out_dir = OUT_DIR / parser.value
+            if parser_out_dir.exists() and any(parser_out_dir.glob("*.md")):
+                skipped_parsers.append(parser)
+                print(f"Skipping {parser.value} - already has output files")
+        
+        parsers = [p for p in parsers if p not in skipped_parsers]
+        skipped_count = original_count - len(parsers)
+        if skipped_count > 0:
+            print(f"Skipped {skipped_count} parsers with existing outputs")
+    
     print(f"Processing {len(parsers)} parsers")
     if max_docs:
         print(f"Maximum documents per parser: {max_docs}")
+    if doc_path:
+        print(f"Testing with specific document: {doc_path}")
+    if skip_existing:
+        print(f"Skip existing outputs: {skip_existing}")
     
     all_results = {}
+    
+    # Load existing results for skipped parsers
+    if skip_existing and skipped_parsers:
+        print(f"\nLoading existing results for {len(skipped_parsers)} skipped parsers...")
+        for parser in skipped_parsers:
+            try:
+                # Load parser info
+                parser_info = None
+                parser_info_path = OUT_DIR / f"{parser.value}_parser_info.json"
+                if parser_info_path.exists():
+                    with open(parser_info_path, 'r') as f:
+                        data = json.load(f)
+                    parser_info = ParserInfo(**data)
+                
+                # Load evaluation info
+                evaluated_info = None
+                eval_info_path = OUT_DIR / f"{parser.value}_evaluation_results.json"
+                if eval_info_path.exists():
+                    with open(eval_info_path, 'r') as f:
+                        data = json.load(f)
+                    evaluated_info = EvaluatedParserInfo(**data)
+                
+                all_results[parser.value] = {
+                    'parser_info': parser_info,
+                    'evaluated_info': evaluated_info
+                }
+                print(f"Loaded existing results for {parser.value}")
+                
+            except Exception as e:
+                print(f"Error loading existing results for {parser.value}: {e}")
+                continue
     
     for parser in parsers:
         print(f"\n{'='*60}")
@@ -451,7 +603,7 @@ def main(
         try:
             # Step 1: Run the parser
             if not skip_parsing:
-                parser_info = run_parser(parser, max_docs)
+                parser_info = run_parser(parser, max_docs, doc_path)
             else:
                 # Load existing parser info if skipping parsing
                 parser_info_path = OUT_DIR / f"{parser.value}_parser_info.json"

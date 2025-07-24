@@ -32,11 +32,11 @@ The parsers that stand out the most are
 
 ## Installing and running evaluations
 
-Install the dependencies: `poetry install`
+Install the dependencies: `uv sync`
 
 Start the docker services: `docker compose up -d`
 
-Run a test `poetry run src/main.py <parser>` or all tests `./run_evals.sh`
+Run a test `uv run src/main.py <parser>` or all tests `./run_evals.sh`
 
 ## List of document parsers
 
